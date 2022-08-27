@@ -1,0 +1,95 @@
+html {
+  box-sizing: border-box;
+  font-family: Nunito, sans-serif;
+  color: white;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 11fr;
+  grid-template-areas:
+  "nav"
+  "main";
+  height: 100vh;
+  margin: 0;
+  /*background-color: gray;*/
+}
+
+.nav {
+  grid-area: nav;
+  background-color: #2CA57D;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.nav > * {
+  border: solid 1px black;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex: 0 1 60%;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.list-item a {
+  text-decoration: none;
+  color: white;
+}
+
+.button {
+  flex: 0 1 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button button {
+  border: none;
+  background-color: #2A9F6C;
+  border-radius: 1rem;
+  color: white;
+}
+
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "section-1 section-2";
+}
+
+.main section:nth-child(1) {
+  grid-area: section-1;
+  background-color: #191A1B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-wrapper {
+  width: 60%;
+}
+
+.main section:nth-child(2) {
+  grid-area: section-2;
+  background-color: black;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.main-wrapper p {
+  font-size: 1.5rem;
+  color: rgb(175, 209, 196);
+}
