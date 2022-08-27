@@ -9,15 +9,17 @@ html {
 }
 
 body {
+  margin: 0;
+}
+
+main {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 11fr;
   grid-template-areas:
-  "nav"
-  "main";
+  "nav nav"
+  "article-1 article-2";
   height: 100vh;
-  margin: 0;
-  /*background-color: gray;*/
 }
 
 .nav {
@@ -27,10 +29,6 @@ body {
   justify-content: space-evenly;
   font-size: 1.3rem;
   font-weight: normal;
-}
-
-.nav > * {
-  border: solid 1px black;
 }
 
 .list {
@@ -58,17 +56,11 @@ body {
   background-color: #2A9F6C;
   border-radius: 1rem;
   color: white;
+  cursor: pointer;
 }
 
-.main {
-  grid-area: main;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "section-1 section-2";
-}
-
-.main section:nth-child(1) {
-  grid-area: section-1;
+.article-1 {
+  grid-area: article-1;
   background-color: #191A1B;
   display: flex;
   justify-content: center;
@@ -79,8 +71,8 @@ body {
   width: 60%;
 }
 
-.main section:nth-child(2) {
-  grid-area: section-2;
+.article-2 {
+  grid-area: article-2;
   background-color: black;
 }
 
@@ -92,4 +84,112 @@ h2 {
 .main-wrapper p {
   font-size: 1.5rem;
   color: rgb(175, 209, 196);
+}
+
+section {
+  height: 120vh;
+  background-color: #319E92;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin-inline: auto;
+  height: 90%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container p:nth-child(1) {
+  margin-inline: auto;
+  width: 90%;
+  font-size: 2rem;
+}
+
+.articles ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  /*border: 1px solid red;*/
+}
+
+.articles li {
+  width: 90%;
+  padding: 1rem;
+  border-radius: .8rem;
+  background-color: #191A1B;
+}
+
+.articles li:hover {
+  transform: scale(1.05);
+}
+
+.articles a {
+  text-decoration: none;
+  color: rgb(175, 209, 196);
+}
+
+.tutorials {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 2.3rem;
+}
+
+.card {
+  position: relative;
+  width: calc(30% - 30px);
+  height: 12rem;
+  text-decoration: none;
+  color: white;
+  /*border: darkgreen solid 3px;*/
+  background-color: #191A1B;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card h3, .card p {
+  width: 80%;
+  margin: 0;
+  margin-top: 1.5rem;
+  /*border: solid black 2px;*/
+}
+
+/*.card:last-child {*/
+/*  margin-bottom: 1rem;*/
+/*}*/
+
+.card h3 {
+  font-size: 1.5rem;
+}
+
+.card p {
+  color: rgb(175, 209, 196);
+}
+
+.card:before {
+  content: "➡";
+  position: absolute;
+  top: 30px;
+  left: -10px;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.card:hover {
+  opacity: .5;
 }
